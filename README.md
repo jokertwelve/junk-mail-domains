@@ -23,7 +23,7 @@ This repository contains a Python script to manage and generate the blocklists.
 * `update_and_push.sh`: Adds domains, regenerates output lists, commits, and pushes to GitHub.
 * `raw_junk_email_domains.json`: The source file containing the raw list of domains with per-domain timestamps.
 * `fuckoff.json`: The clean, deduplicated list for production use.
-* `fuckoff_debug.json`: The deduplicated list with `proton.me` appended to test Power Automate flows without waiting for actual spam.
+* `fuckoff_debug.json`: Compatibility copy of the production list; no test domain is injected.
 
 ## Usage
 

@@ -9,7 +9,6 @@ from pathlib import Path
 RAW_PATH = Path("raw_junk_email_domains.json")
 OUTPUT_PATH = Path("fuckoff.json")
 DEBUG_OUTPUT_PATH = Path("fuckoff_debug.json")
-DEBUG_DOMAIN = "proton.me"
 DEFAULT_LIMIT = 3000
 
 
@@ -82,12 +81,8 @@ def main():
         json.dumps(deduped, separators=(",", ":")) + "\n", encoding="utf-8"
     )
 
-    debug_domains = list(deduped)
-    if DEBUG_DOMAIN not in debug_domains:
-        debug_domains.append(DEBUG_DOMAIN)
-
     DEBUG_OUTPUT_PATH.write_text(
-        json.dumps(debug_domains, separators=(",", ":")) + "\n",
+        json.dumps(deduped, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
 
